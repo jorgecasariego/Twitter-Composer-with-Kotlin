@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Tweet Composer Example</string>
+    <string name="action_settings">Settings</string>
+    <string name="com.twitter.sdk.android.CONSUMER_KEY">USER YOUR KEY</string>
+    <string name="com.twitter.sdk.android.CONSUMER_SECRET">USE YOUR KEY</string>
+</resources>
