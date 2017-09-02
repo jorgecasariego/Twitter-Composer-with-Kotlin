@@ -7,6 +7,8 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.graphics.Matrix
+import android.media.ExifInterface
 import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
@@ -19,11 +21,14 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.twitter.sdk.android.core.*
 import com.twitter.sdk.android.core.identity.TwitterAuthClient
 import com.twitter.sdk.android.tweetcomposer.ComposerActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
+import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.IOException
 import java.text.SimpleDateFormat
@@ -214,20 +219,25 @@ class MainActivity : AppCompatActivity() {
             //Toast.makeText(this, "Mostrando imagen: " + File(file?.path).absolutePath, Toast.LENGTH_LONG).show()
             //Log.d("TAG", "File: " + File(file?.path).absolutePath)
 
-//            Glide.with(this)
-//                    .load(file)
-//                    .into(my_image)
+            Glide.with(this)
+                    .load(imageFilePath)
+                    .into(my_image)
 //
 //            my_image.setImageBitmap(BitmapFactory.decodeFile(File(file?.path).absolutePath))
             //compressImage()
-            if (resultCode == Activity.RESULT_OK) {
-                if (setScaledBitmap() != null) {
-                    Toast.makeText(this, "Showing image", Toast.LENGTH_LONG).show()
-                    my_image.setImageBitmap(setScaledBitmap())
-                }else {
-                    Toast.makeText(this, "Error while capturing Image", Toast.LENGTH_LONG).show();
-                }
-            }
+//            if (resultCode == Activity.RESULT_OK) {
+//
+//                val scaledBitmap = setScaledBitmap()
+//                if (scaledBitmap != null) {
+//                    Toast.makeText(this, "Showing image", Toast.LENGTH_LONG).show()
+//                    //my_image.setImageBitmap(setScaledBitmap())
+//                    Glide.with(this)
+//                            .load(scaledBitmap)
+//                            .into(my_image)
+//                }else {
+//                    Toast.makeText(this, "Error while capturing Image", Toast.LENGTH_LONG).show();
+//                }
+//            }
         }
     }
 }
