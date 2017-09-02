@@ -35,4 +35,11 @@ dependencies {
 
     // Include all the Twitter APIs
     compile 'com.twitter.sdk.android:twitter:3.1.1'
+
+    compile 'com.github.bumptech.glide:glide:4.0.0'
+    compile 'com.android.support:support-v4:26.0.1'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.0.0'
+
+    compile 'id.zelory:compressor:1.0.4'
+    compile 'io.reactivex:rxandroid:1.2.1'
 }
